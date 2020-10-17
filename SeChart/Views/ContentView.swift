@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Charts
 
 private let dateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
@@ -38,7 +39,7 @@ struct ContentView: View {
 }
 
 struct MasterView: View {
-    @Binding var dates: [Date]
+    @Binding var dates: Array<Date>
 
     var body: some View {
         List {
@@ -57,13 +58,17 @@ struct MasterView: View {
 
 struct DetailView: View {
     var selectedDate: Date?
-
+    //@ObservedObject
+    var series = seriesData //SimpleChartInstance().series
+    
     var body: some View {
         Group {
             if selectedDate != nil {
                 Text("\(selectedDate!, formatter: dateFormatter)")
+                BarView(entries: series)
             } else {
-                Text("Detail view content goes here")
+                Text("My Chart")
+                BarView(entries: series)
             }
         }.navigationBarTitle(Text("Detail"))
     }

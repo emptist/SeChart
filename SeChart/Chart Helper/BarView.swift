@@ -9,7 +9,7 @@
 import SwiftUI
 import Charts
 
-struct Bar: UIViewRepresentable {
+struct BarView: UIViewRepresentable {
     var entries: Array<BarChartDataEntry>
     
     func makeUIView(context: Context) -> BarChartView {
@@ -28,7 +28,7 @@ struct Bar: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: BarChartView, context: Context) {
-        
+        uiView.data = addData()
     }
 
     typealias UIViewType = BarChartView
@@ -37,7 +37,7 @@ struct Bar: UIViewRepresentable {
 
 struct Bar_Previews: PreviewProvider {
     static var previews: some View {
-        Bar(entries: [
+        BarView(entries: [
             BarChartDataEntry(x: 11, y: 12),
             BarChartDataEntry(x: 12, y: 15),
             BarChartDataEntry(x: 13, y: 16),

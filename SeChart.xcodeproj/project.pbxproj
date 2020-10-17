@@ -15,7 +15,10 @@
 		48A5130B2538EB9E00CA051D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A513092538EB9E00CA051D /* LaunchScreen.storyboard */; };
 		48A5131C2538EDEA00CA051D /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A513192538EDDD00CA051D /* Charts.framework */; };
 		48A5131D2538EDEA00CA051D /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48A513192538EDDD00CA051D /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		48A513202538EFD400CA051D /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5131F2538EFD400CA051D /* Bar.swift */; };
+		48A513202538EFD400CA051D /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A5131F2538EFD400CA051D /* BarView.swift */; };
+		48A51326253906BD00CA051D /* ChartInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A51325253906BD00CA051D /* ChartInstance.swift */; };
+		48FF98FF253988CA00882655 /* CandleStkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FF98FE253988CA00882655 /* CandleStkView.swift */; };
+		48FF990325398C5500882655 /* DataBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FF990225398C5500882655 /* DataBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +62,10 @@
 		48A5130A2538EB9E00CA051D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48A5130C2538EB9E00CA051D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48A513132538EDDD00CA051D /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../Charts/Charts.xcodeproj; sourceTree = "<group>"; };
-		48A5131F2538EFD400CA051D /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
+		48A5131F2538EFD400CA051D /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
+		48A51325253906BD00CA051D /* ChartInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartInstance.swift; sourceTree = "<group>"; };
+		48FF98FE253988CA00882655 /* CandleStkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleStkView.swift; sourceTree = "<group>"; };
+		48FF990225398C5500882655 /* DataBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,14 +100,16 @@
 		48A512FD2538EB9600CA051D /* SeChart */ = {
 			isa = PBXGroup;
 			children = (
+				48A513242539066E00CA051D /* Models */,
+				48A513232539065700CA051D /* View Models */,
+				48A513222539062700CA051D /* Views */,
+				48A51321253905EA00CA051D /* Chart Helper */,
 				48A512FE2538EB9600CA051D /* AppDelegate.swift */,
 				48A513002538EB9600CA051D /* SceneDelegate.swift */,
-				48A513022538EB9600CA051D /* ContentView.swift */,
 				48A513042538EB9D00CA051D /* Assets.xcassets */,
 				48A513092538EB9E00CA051D /* LaunchScreen.storyboard */,
 				48A5130C2538EB9E00CA051D /* Info.plist */,
 				48A513062538EB9D00CA051D /* Preview Content */,
-				48A5131F2538EFD400CA051D /* Bar.swift */,
 			);
 			path = SeChart;
 			sourceTree = "<group>";
@@ -129,6 +137,39 @@
 				48A5131B2538EDDD00CA051D /* ChartsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		48A51321253905EA00CA051D /* Chart Helper */ = {
+			isa = PBXGroup;
+			children = (
+				48A5131F2538EFD400CA051D /* BarView.swift */,
+				48FF98FE253988CA00882655 /* CandleStkView.swift */,
+			);
+			path = "Chart Helper";
+			sourceTree = "<group>";
+		};
+		48A513222539062700CA051D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48A513022538EB9600CA051D /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		48A513232539065700CA051D /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				48A51325253906BD00CA051D /* ChartInstance.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		48A513242539066E00CA051D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48FF990225398C5500882655 /* DataBar.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,9 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48FF98FF253988CA00882655 /* CandleStkView.swift in Sources */,
 				48A512FF2538EB9600CA051D /* AppDelegate.swift in Sources */,
-				48A513202538EFD400CA051D /* Bar.swift in Sources */,
+				48FF990325398C5500882655 /* DataBar.swift in Sources */,
+				48A513202538EFD400CA051D /* BarView.swift in Sources */,
 				48A513012538EB9600CA051D /* SceneDelegate.swift in Sources */,
+				48A51326253906BD00CA051D /* ChartInstance.swift in Sources */,
 				48A513032538EB9600CA051D /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
